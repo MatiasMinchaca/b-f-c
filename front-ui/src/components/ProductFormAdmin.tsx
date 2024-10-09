@@ -19,14 +19,14 @@ const ProductForm: React.FC<ProductFormProps> = ({ onSuccess }) => {
   const [products, setProducts] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [RestaurantName, setRestaurantName] = useState<string>('');
+  
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
 
     if (jwt) {
       const decodedJwt = jwtDecode<DecodedJwt>(JSON.parse(jwt).token);
-      const userId = decodedJwt.user.id; // Obtener userId
+      const userId = decodedJwt.user.id; 
 
-      // Fetch para obtener el restaurantId usando el userId
       const fetchRestaurantId = async () => {
         try {
           const response = await fetch(`${process.env.REACT_APP_BASE_API}/restaurants/user/${userId}`, {
