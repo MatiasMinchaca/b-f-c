@@ -9,17 +9,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
-const products_module_1 = require("./products/products.module");
-const orders_module_1 = require("./orders/orders.module");
+const product_module_1 = require("./product/product.module");
+const order_module_1 = require("./order/order.module");
+const config_1 = require("@nestjs/config");
+const user_module_1 = require("./user/user.module");
+const auth_module_1 = require("./auth/auth.module");
+const restaurant_module_1 = require("./restaurant/restaurant.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
             mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017/SuperSano_DB'),
-            products_module_1.ProductsModule,
-            orders_module_1.OrdersModule,
+            product_module_1.ProductModule,
+            order_module_1.OrderModule,
+            user_module_1.UserModule,
+            auth_module_1.AuthModule,
+            restaurant_module_1.RestaurantModule,
         ],
     })
 ], AppModule);

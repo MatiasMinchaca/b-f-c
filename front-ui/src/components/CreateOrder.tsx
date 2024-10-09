@@ -47,7 +47,7 @@ const CreateOrder: React.FC<{
         item.productId === productId
           ? { ...item, quantity: item.quantity - 1 }
           : item
-      ).filter(item => item.quantity > 0); // Filtrar productos con cantidad > 0
+      ).filter(item => item.quantity > 0); 
     });
   };
 

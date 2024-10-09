@@ -25,8 +25,6 @@ const OrderListPage: React.FC = () => {
       const response = await fetch('http://localhost:3001/api/orders');
       const data = await response.json();
 
-      console.log(data); // data response
-
       if (Array.isArray(data)) {
         setOrders(data);
       } else {
@@ -44,7 +42,7 @@ const OrderListPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="order-list-container"> {/* Agrega una clase al contenedor principal */}
+    <div className="order-list-container">
       <h1>Lista de Órdenes</h1>
       {orders.length === 0 ? (
         <p>No hay órdenes disponibles.</p>

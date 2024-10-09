@@ -1,11 +1,14 @@
 import React from 'react';
-import ProductList from '../components/ProductListAdmin';
+import ProductForm from '../components/ProductFormAdmin';
 
 const Admin: React.FC = () => {
+  const handleSuccess = () => {
+    alert('Producto guardado con éxito!');
+  };
+
   return (
     <div>
-      <h1>Panel de Administración</h1>
-      <ProductList />
+      <ProductForm onSuccess={handleSuccess} />
     </div>
   );
 };

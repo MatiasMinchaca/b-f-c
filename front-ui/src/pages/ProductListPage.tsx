@@ -23,7 +23,6 @@ const ProductListPage: React.FC = () => {
     <div>
       <h1>Lista de Productos</h1>
       <div>
-        {/* Lista de productos sin la opción de crear o editar */}
         {products.map((product) => (
           <ProductItem 
             key={product._id}
